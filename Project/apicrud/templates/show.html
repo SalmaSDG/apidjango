@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container mt-3">
+
+    <h4> Liste des donnees recuperer</h4>
+    <hr>
+    <a href="{% url 'telecharger' %}" class="btn btn-sm btn-success">Telecharger les donnee format JSON</a> 
+    <a href="{% url 'telechargerEnCsv' %}" class="btn btn-sm btn-success">Telecharger les donnee format CSV</a> 
+   <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">RunningOn</th>
+        <th scope="col">imeiNumber</th>
+        <th scope="col">deviceModel</th>
+        <th scope="col">apiLevel</th>
+        <th scope="col">manufactureName</th>
+        <th scope="col">deviceName</th>
+        <th scope="col">productName</th>
+        <th scope="col">cpuType</th>
+        <th scope="col">hardwareName</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for s in student %}
+      <tr>
+        <td scope="row"> {{ s.RunningOn }} </td>
+        <td scope="row"> {{ s.imeiNumber }} </td>
+        <td scope="row"> {{ s.deviceModel }} </td>
+        <td scope="row"> {{ s.apiLevel }} </td>
+        <td scope="row"> {{ s.manufactureName }} </td>
+        <td scope="row"> {{ s.deviceName }} </td>
+        <td scope="row"> {{ s.productName }} </td>
+        <td scope="row"> {{ s.cpuType }} </td>
+        <td scope="row"> {{ s.hardwareName }} </td>
+        <td> 
+        <a href="/update/{{s.sid}}" class="btn btn-sm btn-info">Edit</a>
+        <a href="/delete/{{s.sid}}" class="btn btn-sm btn-danger">Delete</a>    
+        </td>
+      </tr>
+      {% endfor %}
+
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock content %}

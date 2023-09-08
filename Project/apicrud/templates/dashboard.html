@@ -1,0 +1,75 @@
+{% extends 'baseadmin.html' %}
+
+
+{% block content %}
+</br>
+</br>
+
+{% for message in messages %}
+<h1 style="color: green;"> {{ message }} </h1>
+{% endfor %}
+</br>
+<div class="row">
+  <div class="col-12">
+      <div class="page-title-box">                                     
+          <div class="page-title-right">
+              <form class="d-flex">
+                  <div class="input-group">
+                      <input type="text" class="form-control form-control-light" id="dash-daterange">
+                      <span class="input-group-text bg-primary border-primary text-white">
+                          <i class="mdi mdi-calendar-range font-13"></i>
+                      </span>
+                  </div>
+                  <a href="javascript: void(0);" class="btn btn-primary ms-2">
+                      <i class="mdi mdi-autorenew"></i>
+                  </a>
+                  <a href="javascript: void(0);" class="btn btn-primary ms-1">
+                      <i class="mdi mdi-filter-variant"></i>
+                  </a>
+              </form>
+          </div>
+          <h4 class="page-title">Dans ce espace vous pouvez telechargez vos donnee collecter de l'application mobile !!!</h4>
+      </div>
+  </div>
+</div>
+</br>
+<a href="{% url 'telecharger' %}" class="btn btn-sm btn-success">Telecharger les donnee format JSON</a> 
+    <a href="{% url 'telechargerEnCsv' %}" class="btn btn-sm btn-success">Telecharger les donnee format CSV</a> 
+</br>
+</br>
+   <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">RunningOn</th>
+        <th scope="col">imeiNumber</th>
+        <th scope="col">deviceModel</th>
+        <th scope="col">apiLevel</th>
+        <th scope="col">manufactureName</th>
+        <th scope="col">deviceName</th>
+        <th scope="col">productName</th>
+        <th scope="col">cpuType</th>
+        <th scope="col">hardwareName</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for s in student %}
+      <tr>
+        <td scope="row"> {{ s.RunningOn }} </td>
+        <td scope="row"> {{ s.imeiNumber }} </td>
+        <td scope="row"> {{ s.deviceModel }} </td>
+        <td scope="row"> {{ s.apiLevel }} </td>
+        <td scope="row"> {{ s.manufactureName }} </td>
+        <td scope="row"> {{ s.deviceName }} </td>
+        <td scope="row"> {{ s.productName }} </td>
+        <td scope="row"> {{ s.cpuType }} </td>
+        <td scope="row"> {{ s.hardwareName }} </td>
+        <!--<td> 
+        <a href="/update/{{s.sid}}" class="btn btn-sm btn-info">Edit</a>
+        <a href="/delete/{{s.sid}}" class="btn btn-sm btn-danger">Delete</a>    
+        </td>-->
+      </tr>
+      {% endfor %}
+
+    </tbody>
+
+{% endblock content %}

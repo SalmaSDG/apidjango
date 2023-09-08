@@ -1,0 +1,122 @@
+{% extends 'baseadmin.html' %}
+{% load static %}
+
+{% block content %}
+</br>
+</br>
+
+</br>
+<div class="row">
+  <div class="col-12">
+      <div class="page-title-box">                                     
+          <div class="page-title-right">
+              <form class="d-flex">
+                  <div class="input-group">
+                      <input type="text" class="form-control form-control-light" id="dash-daterange">
+                      <span class="input-group-text bg-primary border-primary text-white">
+                          <i class="mdi mdi-calendar-range font-13"></i>
+                      </span>
+                  </div>
+                  <a href="javascript: void(0);" class="btn btn-primary ms-2">
+                      <i class="mdi mdi-autorenew"></i>
+                  </a>
+                  <a href="javascript: void(0);" class="btn btn-primary ms-1">
+                      <i class="mdi mdi-filter-variant"></i>
+                  </a>
+              </form>
+          </div>
+          <h4 class="page-title">Dans ce espace vous pouvez telechargez vos donnee collecter de l'application mobile !!!</h4>
+      </div>
+  </div>
+</div>
+
+<div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
+    <div class="container">
+            <div class="col-xxl-12 col-lg-12">
+                <div class="card">
+
+                    <div class="card-body p-4">
+                        
+                        <div class="text-center w-75 m-auto">
+                            <h4 class="text-dark-50 text-center mt-0 fw-bold">INSCRIPTION</h4>
+                            <p class="text-muted mb-4">Cet espace est reserve uniquement aux administrateurs </p>
+                        </div>
+                        {% for message in messages %}
+                        <h1 style="color: green;"> {{ message }} </h1>
+                        {% endfor %}
+
+                        <form action ="{% url 'register' %}" method ="POST">
+                            {% csrf_token %}
+
+                           <div class="mb-3">
+                                <label for="fullname" class="form-label">Pseudo</label>
+                                <input name="username" class="form-control" type="text" id="fullname" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fullname" class="form-label">Nom</label>
+                                <input name="first_name" class="form-control" type="text" id="fullname" placeholder="Enter your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="fullname" class="form-label">Prenom</label>
+                                <input name="last_name" class="form-control" type="text" id="fullname" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="emailaddress" class="form-label">Email</label>
+                                <input name="email" class="form-control" type="email" id="emailaddress" required placeholder="Enter your email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="input-group input-group-merge">
+                                    <input name="password1" type="password" id="password" class="form-control" placeholder="Enter your password">
+                                    <div class="input-group-text" data-password="false">
+                                        <span class="password-eye"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Confirmation Password</label>
+                                <div class="input-group input-group-merge">
+                                    <input name="password2" type="password" id="password" class="form-control" placeholder="Enter your password">
+                                    <div class="input-group-text" data-password="false">
+                                        <span class="password-eye"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                         <!--   <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="checkbox-signup">
+                                    <label class="form-check-label" for="checkbox-signup">I accept <a href="#" class="text-muted">Terms and Conditions</a></label>
+                                </div>
+                            </div>-->
+
+                            <div class="mb-3 text-center">
+                                <button class="btn btn-primary" type="submit"> S'inscrir </button>
+                            </div>
+
+                        </form>
+                    </div> <!-- end card-body -->
+                </div>
+                <!-- end card -->
+
+              <!--  <div class="row mt-3">
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Already have account? <a href="pages-login.html" class="text-muted ms-1"><b>Log In</b></a></p>
+                    </div>  end col-->
+                <!--</div>-->
+                <!-- end row -->
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    
+    <!-- end container -->
+</div>
+<!-- end page -->
+
+    </tbody>
+
+{% endblock content %}
+       

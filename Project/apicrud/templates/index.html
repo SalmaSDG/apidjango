@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    
+<!-- Mirrored from coderthemes.com/hyper/saas/landing.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Jan 2023 16:06:51 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <title>Espace Administrateur</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+        <meta content="Coderthemes" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico' %}">
+
+        <!-- Theme Config Js -->
+        <script src="{% static 'assets/js/hyper-config.js' %}"></script>
+
+        <!-- App css -->
+        <link href="{% static 'assets/css/app-saas.min.css' %}" rel="stylesheet" type="text/css" id="app-style" />
+
+        <!-- Icons css -->
+        <link href="{% static 'assets/css/icons.min.css' %}" rel="stylesheet" type="text/css" />        
+
+    </head>
+
+    <body>
+
+        <!-- NAVBAR START -->
+        <nav class="navbar navbar-expand-lg py-lg-3 navbar-dark">
+            <div class="container">
+
+                <!-- logo -->
+                <a href="index.html" class="navbar-brand me-lg-5">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="logo" class="logo-dark" height="22" />
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="mdi mdi-menu"></i>
+                </button>
+
+                <!-- menus -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+                    <!-- left menu -->
+                    <ul class="navbar-nav me-auto align-items-center">
+                        <li class="nav-item mx-lg-1">
+                            <a class="nav-link active" href="#">ACCEUIL</a>
+                        </li>
+                        
+                    </ul>
+
+                    <!-- right menu -->
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item me-0">
+                            <a href="{% url 'login' %}" target="_blank" class="btn btn-sm btn-light rounded-pill d-none d-lg-inline-flex">
+                                <i class="mdi mdi-users me-2"></i> Se connecter
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- NAVBAR END -->
+
+        <!-- START HERO -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-5">
+                        <div class="mt-md-4">
+                           
+                            <h2 class="text-white fw-normal mb-4 mt-3 hero-title">
+                                BIENVENUE DANS VOTRE ESPACE ADMINISTRATEUR
+                            </h2>
+
+                            <p class="mb-4 font-16 text-white-50">L'acces a cet espace s'effectue a travers une authentification ..!!!</p>
+                            <p style="color:brown; font-size: 16px;" >Cet espace est reserve uniquement aux administrateur , tout tentativement de violation de politique de securite donnerais suite a une poursuite et des amendes. !!!</p>
+
+
+                            <a href="{% url 'login' %}" target="_blank" class="btn btn-success">Se connecter <i
+                                    class="mdi mdi-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 offset-md-2">
+                        <div class="text-md-end mt-3 mt-md-0">
+                            <img src="{% static 'assets/images/svg/startup.svg' %}" alt="" class="img-fluid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- END HERO -->
+
+        <!-- END SERVICES -->
+
+        <!-- END FEATURES 1 -->
+
+        <!-- START FEATURES 2 -->
+        <section class="py-5">
+            <div class="container">
+               
+                <div class="row mt-2 py-5 align-items-center">
+                    <div class="col-lg-5 col-md-6">
+                        <img src="{% static 'assets/images/svg/features-1.svg' %}" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 offset-md-1 col-md-5">
+                        <h3 class="fw-normal">Cet espace vous permettra de gere votre application mobile de pressence.</h3>
+                        <p class="text-muted mt-3">Elle comprend plusieurs modules</p>
+
+                        <div class="mt-4">
+                            <p class="text-muted"><i class="mdi mdi-circle-medium text-primary"></i> Gestion des activites</p>
+                        </div>
+
+                        <a href="#" class="btn btn-primary rounded-pill mt-3">voir la documentation <i class="mdi mdi-arrow-right ms-1"></i></a>
+
+                    </div>
+                </div>
+
+                
+
+            </div>
+        </section>
+        <!-- END FEATURES 2 -->
+
+        <!-- END PRICING -->
+
+        <!-- END FAQ -->
+
+        
+        <!-- END CONTACT -->
+
+        <!-- START FOOTER -->
+        <footer class="bg-dark py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="{% static 'assets/images/logo.png'%}" alt="logo" class="logo-dark" height="22" />
+                        <p class="text-muted mt-4">Cet espace est reserve aux administrateurs 
+                            <br> --
+                            <br> Referer a la documentation .</p>
+
+                        <ul class="social-list list-inline mt-3">
+                            <li class="list-inline-item text-center">
+                                <a href="#" class="social-list-item border-primary text-primary"><i class="mdi mdi-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <a href="#" class="social-list-item border-danger text-danger"><i class="mdi mdi-google"></i></a>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <a href="#" class="social-list-item border-info text-info"><i class="mdi mdi-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item text-center">
+                                <a href="#" class="social-list-item border-secondary text-secondary"><i class="mdi mdi-github"></i></a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 mt-3 mt-lg-0">
+                        <h5 class="text-light">Company</h5>
+
+                        <ul class="list-unstyled ps-0 mb-0 mt-3">
+                            <li class="mt-2"><a href="#" class="text-muted">DigitalCorp</a></li>
+                            
+                            <li class="mt-2"><a href="#" class="text-muted">CITADEL</a></li>
+                            <li class="mt-2"><a href="#" class="text-muted">Documentation</a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 mt-3 mt-lg-0">
+                        <h5 class="text-light">Application</h5>
+
+                        <ul class="list-unstyled ps-0 mb-0 mt-3">
+                            <li class="mt-2"><a href="#" class="text-muted">Description module</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 mt-3 mt-lg-0">
+                        <h5 class="text-light">Documentation</h5>
+
+                        <ul class="list-unstyled ps-0 mb-0 mt-3">
+                            <li class="mt-2"><a href="" class="text-muted">Aide</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="mt-5">
+                            <p class="text-muted mt-4 text-center mb-0">© 2023 - <script>document.write(new Date().getFullYear())</script> DigitalCorp-#ODC
+                                CITADEL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- END FOOTER -->
+        <!-- Vendor js -->
+        <script src="{% static 'assets/js/vendor.min.j' %}"></script>
+
+        <!-- App js -->
+        <script src="{% static 'assets/js/app.min.js' %}"></script>
+
+    </body>
+
+
+<!-- Mirrored from coderthemes.com/hyper/saas/landing.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 17 Jan 2023 16:06:54 GMT -->
+</html>

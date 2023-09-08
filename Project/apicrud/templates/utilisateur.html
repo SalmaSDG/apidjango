@@ -1,0 +1,63 @@
+{% extends 'baseadmin.html' %}
+
+
+{% block content %}
+</br>
+</br>
+
+{% for message in messages %}
+<h1 style="color: green;"> {{ message }} </h1>
+{% endfor %}
+</br>
+<div class="row">
+  <div class="col-12">
+      <div class="page-title-box">                                     
+          <div class="page-title-right">
+              <form class="d-flex">
+                  <div class="input-group">
+                      <input type="text" class="form-control form-control-light" id="dash-daterange">
+                      <span class="input-group-text bg-primary border-primary text-white">
+                          <i class="mdi mdi-calendar-range font-13"></i>
+                      </span>
+                  </div>
+                  <a href="javascript: void(0);" class="btn btn-primary ms-2">
+                      <i class="mdi mdi-autorenew"></i>
+                  </a>
+                  <a href="javascript: void(0);" class="btn btn-primary ms-1">
+                      <i class="mdi mdi-filter-variant"></i>
+                  </a>
+              </form>
+          </div>
+          <h4 class="page-title">Liste de tous les utilisateur ayant acces a l'espace administrateur!!!</h4>
+      </div>
+  </div>
+</div>
+
+   <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">username</th>
+        <th scope="col">NOM</th>
+        <th scope="col">PRENOM</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">PASSWORD</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for s in student %}
+      <tr>
+        <td scope="row"> {{ s.username }} </td>
+        <td scope="row"> {{ s.first_name }} </td>
+        <td scope="row"> {{ s.last_name }} </td>
+        <td scope="row"> {{ s.email }} </td>
+        <td scope="row"> {{ s.password }} </td>
+       <!-- <td> 
+        <a href="/update/{{s.sid}}" class="btn btn-sm btn-info">Edit</a>
+        <a href="/delete/{{s.sid}}" class="btn btn-sm btn-danger">Delete</a>    
+        </td>-->
+      </tr>
+      {% endfor %}
+
+    </tbody>
+
+{% endblock content %}

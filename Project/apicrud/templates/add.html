@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container mt-3">
+
+    <h4> Ajouter Nouveau</h4>
+
+    <hr>
+    <form action ="" method ="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="">ID</label>
+            <input type="text" name="sid" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Nom</label>
+            <input type="text" name="sname" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="">Contact</label>
+            <input type="text" name="scontact" class="form-control">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit"> Ajouter</button>
+            <a href="{% url 'show' %}" class="btn btn-info">Details </a>
+        </div>
+    </form>
+
+</div>
+
+{% endblock content %}
